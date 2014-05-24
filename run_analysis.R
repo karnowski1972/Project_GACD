@@ -40,4 +40,4 @@ datamean<- ddply(data, .(subject, activities), function(x) colMeans(x[1:66]))
 #transform column names to lower case and remove special characters
 colnames(datamean) <- tolower(gsub("(\\(\\))|-","",names(datamean)))
 #write tidy dataset to file
-write.csv (datamean, file="./data/results.csv")
+write.csv (datamean, file="./data/results.csv",row.names=FALSE)
